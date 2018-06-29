@@ -8,6 +8,7 @@ public class MurderSolveUI : MonoBehaviour
     public Dropdown killer;
     public Dropdown victim;
     public Dropdown weapon;
+    public Image winImage;
 
     private Actor a;
     
@@ -43,5 +44,10 @@ public class MurderSolveUI : MonoBehaviour
         }
 
         weapon.AddOptions(weaponOptions);
+    }
+
+    public void ShowWinScreen()
+    {
+        winImage.gameObject.SetActive(true);
     }
 }

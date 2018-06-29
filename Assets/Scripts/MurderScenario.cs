@@ -27,6 +27,43 @@ public class MurderScenario : MonoBehaviour
     {
 
     }
+
+    public void ProposeSolution()
+    {
+        Actor propKiller = null;
+        Actor propVictim = null;
+        Weapon propWeapon = null;
+
+        
+        foreach(Weapon w in weapons)
+        {
+            if (w.ToString() ==  solverUI.weapon.options[solverUI.weapon.value].text)
+            {
+                propWeapon = w;
+            }
+        }
+
+        foreach(Actor a in actors)
+        {
+            if (a.ToString() == solverUI.victim.options[solverUI.victim.value].text)
+            {
+                propVictim = a;
+            }
+            if (a.ToString() == solverUI.killer.options[solverUI.killer.value].text)
+            {
+                propKiller = a;
+            }
+
+
+        }
+
+        Debug.Log("Vic: " + propVictim.ToString());
+        Debug.Log("Kil: " + propKiller.ToString());
+        Debug.Log("Wep: " + propWeapon.ToString());
+
+        if (SolveMurder(propVictim, propKiller, propWeapon))
+            solverUI.ShowWinScreen();
+    }
     /// <summary>
     /// Calculate this caper! 
     /// </summary>
@@ -34,7 +71,7 @@ public class MurderScenario : MonoBehaviour
     /// <param name="proposedKiller">Whomst'd've dun it</param>
     /// <param name="proposedWeapon">What the heck killed em</param>
     /// <returns>True if correct, false if not.</returns>
-    public bool SolveMurder(Actor proposedVictim, Actor proposedKiller, Weapon proposedWeapon)
+    private bool SolveMurder(Actor proposedVictim, Actor proposedKiller, Weapon proposedWeapon)
     {
         if (proposedVictim.GetRole() == Actor.Role.Victim && proposedKiller.GetRole() == Actor.Role.Killer && proposedWeapon.CheckIsMurderWeapon())
             return true;

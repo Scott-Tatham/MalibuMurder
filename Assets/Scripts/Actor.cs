@@ -73,7 +73,7 @@ public static class ActorTypes
         {"Red",Color.red},
         {"Green", Color.green},
         {"Blue", Color.blue},
-        {"White",Color.red}
+        {"White",Color.white}
 
     };
 }
