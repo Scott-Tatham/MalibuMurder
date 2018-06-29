@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Greybox.unity
+- path: Assets/Scenes/GameLogic_Tests.unity
   isLoaded: 1
   isActive: 1
