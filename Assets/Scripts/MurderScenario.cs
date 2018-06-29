@@ -28,22 +28,26 @@ public class MurderScenario : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// We'll read through the dropdown menus to infer what the user assumes is the murder scenario
+    /// </summary>
     public void ProposeSolution()
     {
+        //Our proposed solution.
         Actor propKiller = null;
         Actor propVictim = null;
         Weapon propWeapon = null;
 
         
-        foreach(Weapon w in weapons)
+        foreach(Weapon w in weapons) //For our the weapons in the field.
         {
-            if (w.ToString() ==  solverUI.weapon.options[solverUI.weapon.value].text)
+            if (w.ToString() ==  solverUI.weapon.options[solverUI.weapon.value].text) //Convert the dropdown string to the weapon.
             {
-                propWeapon = w;
+                propWeapon = w; //Find the one the user has selected and set that as the proposed.
             }
         }
 
-        foreach(Actor a in actors)
+        foreach(Actor a in actors) //Same for actors like we did for weapons.
         {
             if (a.ToString() == solverUI.victim.options[solverUI.victim.value].text)
             {
@@ -61,8 +65,8 @@ public class MurderScenario : MonoBehaviour
         Debug.Log("Kil: " + propKiller.ToString());
         Debug.Log("Wep: " + propWeapon.ToString());
 
-        if (SolveMurder(propVictim, propKiller, propWeapon))
-            solverUI.ShowWinScreen();
+        if (SolveMurder(propVictim, propKiller, propWeapon)) //Did we guess right?
+            solverUI.ShowWinScreen(); //We're winar 
     }
     /// <summary>
     /// Calculate this caper! 
@@ -85,15 +89,17 @@ public class MurderScenario : MonoBehaviour
     /// <param name="actorCount">Must be at least 2 (victim and killer)</param>
     public void GenerateRandomScenario()
     {
-        for (int i = 0; i < ActorTypes.colours.Count; i++)
+        for (int i = 0; i < ActorTypes.colours.Count; i++) //Foreach defined colour.
         {
-            GameObject gameObject = new GameObject("Belligerant");
+            //Actors will eventually be real gameobjects in space so we're prepping for that.
+            GameObject gameObject = new GameObject("Belligerant " + i); //Create a new gameobject contrainer for actor data.
 
-            Actor newActor = gameObject.AddComponent(typeof(Actor)) as Actor;
+            Actor newActor = gameObject.AddComponent(typeof(Actor)) as Actor; //All deez game objects are actors.
 
             actors.Add(newActor);
-            if (i == 0)
+            if (i == 0) //First we'll create a killer. we need one.
             {
+                //Set em up with some default junk.
                 newActor.SetRole(Actor.Role.Killer);
                 newActor.SetColour(Color.red);
                 Weapon wep = gameObject.AddComponent(typeof(Weapon)) as Weapon;
@@ -101,12 +107,12 @@ public class MurderScenario : MonoBehaviour
                 wep.SetName(Weapon.randomWeaponNames[i]);
                 weapons.Add(wep);
             }
-            else if (i == 1)
+            else if (i == 1) //Now we need a victim
             {
                 newActor.SetRole(Actor.Role.Victim);
                 newActor.SetColour(Color.blue);
             }
-            else
+            else //Fill out our red-herrings.
             {
                 newActor.SetRole(Actor.Role.Unrelated);
                 newActor.SetColour(Color.white);
@@ -114,10 +120,7 @@ public class MurderScenario : MonoBehaviour
                 wep.SetName(Weapon.randomWeaponNames[i]);
                 weapons.Add(wep);
 
-            }
-            //actors.Add(new Actor())
-
+            }     
         }
-
     }
 }

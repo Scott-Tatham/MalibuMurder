@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// The UI responsible for the seletion of a killer, victim and weapon.
+/// </summary>
 public class MurderSolveUI : MonoBehaviour
 {
     public Dropdown killer;
     public Dropdown victim;
     public Dropdown weapon;
     public Image winImage;
-
-    private Actor a;
     
 	// Use this for initialization
 	void Start ()
@@ -19,13 +20,13 @@ public class MurderSolveUI : MonoBehaviour
         victim.ClearOptions();
         weapon.ClearOptions();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-    public void AddActor(List<Actor> a, List<Weapon>w)
+    /// <summary>
+    /// Add all our actors and weapons for selection.
+    /// </summary>
+    /// <param name="a">All avaliable actors.</param>
+    /// <param name="w">All avaliable weapons</param>
+    public void PopulateDropdowns(List<Actor> a, List<Weapon>w)
     {
         List<Dropdown.OptionData> actorOptions = new List<Dropdown.OptionData>();
 
@@ -46,6 +47,11 @@ public class MurderSolveUI : MonoBehaviour
         weapon.AddOptions(weaponOptions);
     }
 
+    /// <summary>
+    /// Conglaturations. You have completed a great game.
+    /// You have prooved the justice of our culture.
+    /// Now go and rest our heroes. 
+    /// </summary>
     public void ShowWinScreen()
     {
         winImage.gameObject.SetActive(true);
