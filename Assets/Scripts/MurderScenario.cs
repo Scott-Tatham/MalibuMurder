@@ -20,7 +20,7 @@ public class MurderScenario : MonoBehaviour
         weapons = new List<Weapon>();
         GenerateRandomScenario();
 
-        solverUI.AddActor(actors, weapons);
+        solverUI.PopulateDropdowns(actors, weapons);
     }
 
     public void PopulateUI()
