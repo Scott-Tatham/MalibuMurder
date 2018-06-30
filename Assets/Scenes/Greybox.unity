@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeCorrection: {x: 0.5, y: 0.25}
-  cameraMap: {fileID: 2800000, guid: b9b6d209b6347ea4189c7effe86b8a88, type: 3}
+  cameraMap: {fileID: 2800000, guid: 685c407d8160b0841a8d9e4f500f1852, type: 3}
   montageImage: {fileID: 148286467}
   panels:
   - {fileID: 1440589775574412, guid: 3180b373751cc2e4a8c8068eed9c15ab, type: 2}
