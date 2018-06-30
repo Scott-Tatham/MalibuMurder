@@ -10,22 +10,52 @@ public class MurderScenario : MonoBehaviour
 {
     public MurderSolveUI solverUI;
 
+    [Tooltip("Should we generate the scenario or scan for it?")]
+    public bool genScenario = false;
+    public int maxProposals;
+
     List<Actor> actors;
     List<Weapon> weapons;
-
+    private int proposalsLeft;
 
     public void Start()
     {
+        proposalsLeft = maxProposals;
         actors = new List<Actor>();
         weapons = new List<Weapon>();
-        GenerateRandomScenario();
 
-        solverUI.PopulateDropdowns(actors, weapons);
+        if (genScenario)
+            GenerateRandomScenario();
+        else
+            ScanScenario();
+
+        PopulateUI();
     }
 
     public void PopulateUI()
     {
+        if (actors.Count == 0 || weapons.Count == 0)
+        {
+            Debug.LogWarning("WARINING! We don't have actors or weapons. Fix that shitt");
+            return;
+        }
+        solverUI.PopulateDropdowns(actors, weapons);
+        solverUI.SetProposalsLeft(proposalsLeft);
+    }
 
+    public void ScanScenario()
+    {
+        foreach (Transform child in transform)
+        {
+            Actor a = child.gameObject.GetComponent<Actor>();
+            if (a != null)
+                actors.Add(a);
+
+            Weapon w = child.gameObject.GetComponent<Weapon>();
+            if (w != null)
+                weapons.Add(w);
+
+        }
     }
 
     /// <summary>
@@ -67,6 +97,17 @@ public class MurderScenario : MonoBehaviour
 
         if (SolveMurder(propVictim, propKiller, propWeapon)) //Did we guess right?
             solverUI.ShowWinScreen(); //We're winar 
+        else
+            NegateProposals();
+
+    }
+
+    public void NegateProposals()
+
+
+    {
+        proposalsLeft--;
+        solverUI.SetProposalsLeft(proposalsLeft);
     }
     /// <summary>
     /// Calculate this caper! 

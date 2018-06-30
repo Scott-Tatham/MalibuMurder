@@ -12,7 +12,8 @@ public class MurderSolveUI : MonoBehaviour
     public Dropdown victim;
     public Dropdown weapon;
     public Image winImage;
-    
+    public Text turnsLeft;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -45,6 +46,15 @@ public class MurderSolveUI : MonoBehaviour
         }
 
         weapon.AddOptions(weaponOptions);
+    }
+
+    /// <summary>
+    /// Set how many guesses we have left.
+    /// </summary>
+    /// <param name="turns">Guesses</param>
+    public void SetProposalsLeft(int proposals)
+    {
+        turnsLeft.text = "Proposals left: " + proposals;
     }
 
     /// <summary>
