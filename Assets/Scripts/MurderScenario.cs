@@ -16,7 +16,7 @@ public class MurderScenario : MonoBehaviour
 
     List<Actor> actors;
     List<Weapon> weapons;
-    private int proposalsLeft;
+    int proposalsLeft;
 
     public void Start()
     {
