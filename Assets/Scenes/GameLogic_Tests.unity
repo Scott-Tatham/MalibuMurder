@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000016, guid: cc8321826008e70498d2360886f87c07,
+  m_LightingDataAsset: {fileID: 112000022, guid: f2844ee2932074e4ebe417547650c593,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -816,7 +816,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh12900
+  m_Name: pb_Mesh18716
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 320907573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe1086c8c732904895bd9a3839cc87f, type: 3}
+  m_Script: {fileID: 11500000, guid: 52ca6efeeeeb6864c87b95fbc10e852e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   killer: {fileID: 316543111}
@@ -1420,7 +1420,6 @@ GameObject:
   - component: {fileID: 449485877}
   - component: {fileID: 449485880}
   - component: {fileID: 449485879}
-  - component: {fileID: 449485878}
   m_Layer: 0
   m_Name: Cam2
   m_TagString: MainCamera
@@ -1441,13 +1440,6 @@ Transform:
   m_Father: {fileID: 122751146}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 10.012, y: -43.919003, z: -0.35700002}
---- !u!81 &449485878
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 449485876}
-  m_Enabled: 0
 --- !u!124 &449485879
 Behaviour:
   m_ObjectHideFlags: 0
@@ -2001,7 +1993,6 @@ GameObject:
   - component: {fileID: 555877578}
   - component: {fileID: 555877577}
   - component: {fileID: 555877576}
-  - component: {fileID: 555877575}
   m_Layer: 0
   m_Name: Cam3
   m_TagString: MainCamera
@@ -2009,13 +2000,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &555877575
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 555877574}
-  m_Enabled: 0
 --- !u!124 &555877576
 Behaviour:
   m_ObjectHideFlags: 0
@@ -2077,7 +2061,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-78622
+  m_Name: pb_Mesh18896
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -2677,7 +2661,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 631402978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 524271aef4c55744fa45aee060214a2d, type: 3}
+  m_Script: {fileID: 11500000, guid: ecd62c9dbc4227f4984fa4349a81a8a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   solverUI: {fileID: 320907574}
@@ -3232,17 +3216,9 @@ MonoBehaviour:
     angleError: 8
     areaError: 15
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 03000000
-  m_SelectedEdges:
-  - x: 12
-    y: 13
-  - x: 14
-    y: 12
-  - x: 13
-    y: 15
-  - x: 15
-    y: 14
-  m_selectedTriangles: 0c0000000d0000000e0000000f000000
+  m_selectedFaces: 
+  m_SelectedEdges: []
+  m_selectedTriangles: 
 --- !u!33 &685862603
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3704,7 +3680,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh3838
+  m_Name: pb_Mesh18754
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -3855,7 +3831,6 @@ GameObject:
   - component: {fileID: 808213167}
   - component: {fileID: 808213170}
   - component: {fileID: 808213169}
-  - component: {fileID: 808213168}
   m_Layer: 0
   m_Name: Cam4
   m_TagString: MainCamera
@@ -3876,13 +3851,6 @@ Transform:
   m_Father: {fileID: 122751146}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 10.012, y: 145.06401, z: -0.35700002}
---- !u!81 &808213168
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 808213166}
-  m_Enabled: 0
 --- !u!124 &808213169
 Behaviour:
   m_ObjectHideFlags: 0
@@ -4392,17 +4360,9 @@ MonoBehaviour:
     angleError: 8
     areaError: 15
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 01000000
-  m_SelectedEdges:
-  - x: 4
-    y: 5
-  - x: 6
-    y: 4
-  - x: 5
-    y: 7
-  - x: 7
-    y: 6
-  m_selectedTriangles: 04000000050000000600000007000000
+  m_selectedFaces: 
+  m_SelectedEdges: []
+  m_selectedTriangles: 
 --- !u!33 &828561805
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4659,7 +4619,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh3960
+  m_Name: pb_Mesh18956
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -4805,7 +4765,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh3976
+  m_Name: pb_Mesh19086
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -4951,7 +4911,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh3880
+  m_Name: pb_Mesh18806
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -5482,17 +5442,9 @@ MonoBehaviour:
     angleError: 8
     areaError: 15
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 01000000
-  m_SelectedEdges:
-  - x: 4
-    y: 5
-  - x: 6
-    y: 4
-  - x: 5
-    y: 7
-  - x: 7
-    y: 6
-  m_selectedTriangles: 04000000050000000600000007000000
+  m_selectedFaces: 
+  m_SelectedEdges: []
+  m_selectedTriangles: 
 --- !u!33 &1182808562
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6348,7 +6300,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-17976
+  m_Name: pb_Mesh18850
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -7430,7 +7382,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-271284
+  m_Name: pb_Mesh18794
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -7889,7 +7841,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fba66823d8a0be048b289bdab22d9606, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 69bb58c638ee1c14f9d15022d8b0b466, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8659,7 +8611,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-26750
+  m_Name: pb_Mesh18970
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -9185,7 +9137,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-209082
+  m_Name: pb_Mesh18626
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
