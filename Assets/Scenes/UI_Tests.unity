@@ -236,7 +236,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 653153004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4328f7c3e3050bd46b1c5acf25e7e5e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1195f29644ea78141b78a5bc20e58a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cameraToControl: {fileID: 1909607656}
@@ -457,8 +457,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1909607651}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5410900b62827a74e9d9722532fc379b, type: 3}
+  m_Script: {fileID: 11500000, guid: 48c40f9930b92a54d9246c9a20c8be51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPositiveHorizontal: 60
-  maxNegativeHorizontal: -20
+  maxPositiveHorizontal: 80
+  maxNegativeHorizontal: -16

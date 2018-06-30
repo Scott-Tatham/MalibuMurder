@@ -12,14 +12,15 @@ public class MurderScenario : MonoBehaviour
 
     [Tooltip("Should we generate the scenario or scan for it?")]
     public bool genScenario = false;
+    public int maxProposals;
 
     List<Actor> actors;
     List<Weapon> weapons;
-
+    private int proposalsLeft;
 
     public void Start()
     {
-
+        proposalsLeft = maxProposals;
         actors = new List<Actor>();
         weapons = new List<Weapon>();
 
@@ -28,12 +29,18 @@ public class MurderScenario : MonoBehaviour
         else
             ScanScenario();
 
-        solverUI.PopulateDropdowns(actors, weapons);
+        PopulateUI();
     }
 
     public void PopulateUI()
     {
-
+        if (actors.Count == 0 || weapons.Count == 0)
+        {
+            Debug.LogWarning("WARINING! We don't have actors or weapons. Fix that shitt");
+            return;
+        }
+        solverUI.PopulateDropdowns(actors, weapons);
+        solverUI.SetProposalsLeft(proposalsLeft);
     }
 
     public void ScanScenario()
@@ -90,6 +97,17 @@ public class MurderScenario : MonoBehaviour
 
         if (SolveMurder(propVictim, propKiller, propWeapon)) //Did we guess right?
             solverUI.ShowWinScreen(); //We're winar 
+        else
+            NegateProposals();
+
+    }
+
+    public void NegateProposals()
+
+
+    {
+        proposalsLeft--;
+        solverUI.SetProposalsLeft(proposalsLeft);
     }
     /// <summary>
     /// Calculate this caper! 
