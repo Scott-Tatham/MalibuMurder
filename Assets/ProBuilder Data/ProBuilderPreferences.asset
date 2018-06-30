@@ -23,12 +23,23 @@ MonoBehaviour:
   m_Float_keys: []
   m_String_keys: []
   m_Color_keys: []
+<<<<<<< HEAD
   m_Material_keys:
   - pbDefaultMaterial
   m_Bool_values: 01000000
   m_Int_values: 020000000200000000000000
   m_Float_values: []
   m_String_values: []
+=======
+  m_Material_keys: []
+  m_Bool_values: 
+  m_Int_values: 01000000020000000100000000000000
+  m_Float_values:
+  - 0
+  - 0
+  m_String_values:
+  - Assets/ProBuilder Data//Default Material Palette.asset
+>>>>>>> ff31e6364d9633d4afefffd223290c617dfbfe1f
   m_Color_values: []
   m_Material_values:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
