@@ -12,8 +12,10 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private string weaponName;
 
-    private GameObject weaponPrefab;
+    [SerializeField]
     private bool isMurderWeapon;
+
+    private GameObject weaponPrefab;
     
     /// <summary>
     /// Get a string rep of this weapon

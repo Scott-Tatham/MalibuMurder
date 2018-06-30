@@ -10,15 +10,23 @@ public class MurderScenario : MonoBehaviour
 {
     public MurderSolveUI solverUI;
 
+    [Tooltip("Should we generate the scenario or scan for it?")]
+    public bool genScenario = false;
+
     List<Actor> actors;
     List<Weapon> weapons;
 
 
     public void Start()
     {
+
         actors = new List<Actor>();
         weapons = new List<Weapon>();
-        GenerateRandomScenario();
+
+        if (genScenario)
+            GenerateRandomScenario();
+        else
+            ScanScenario();
 
         solverUI.PopulateDropdowns(actors, weapons);
     }
@@ -26,6 +34,21 @@ public class MurderScenario : MonoBehaviour
     public void PopulateUI()
     {
 
+    }
+
+    public void ScanScenario()
+    {
+        foreach (Transform child in transform)
+        {
+            Actor a = child.gameObject.GetComponent<Actor>();
+            if (a != null)
+                actors.Add(a);
+
+            Weapon w = child.gameObject.GetComponent<Weapon>();
+            if (w != null)
+                weapons.Add(w);
+
+        }
     }
 
     /// <summary>
