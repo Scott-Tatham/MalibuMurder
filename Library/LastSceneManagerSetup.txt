@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Greybox.unity
-=======
-- path: Assets/Scenes/GameLogic_Tests.unity
->>>>>>> ff31e6364d9633d4afefffd223290c617dfbfe1f
   isLoaded: 1
   isActive: 1
