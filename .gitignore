@@ -414,3 +414,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Library/expandedItems
+Library/CurrentLayout.dwlt
+Library/assetDatabase3

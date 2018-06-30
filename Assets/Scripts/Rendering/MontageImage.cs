@@ -22,6 +22,11 @@ public class MontageImage : MonoBehaviour
 
     void GenerateMontageImage()
     {
+        for (int i = 0; i < panels.Length; i++)
+        {
+            panels[i].transform.localScale = new Vector3(sizeCorrection.x, sizeCorrection.y, 1);
+        }
+
         gridSize = new Vector2(cameraMap.width, cameraMap.height);
 
         for (int i = 0; i < (int)gridSize.x; i++)
@@ -29,7 +34,10 @@ public class MontageImage : MonoBehaviour
             for (int j = 0; j < (int)gridSize.y; j++)
             {
                 int index = (int)(cameraMap.GetPixel(i, j).r * panels.Length);
-                Instantiate(panels[index], new Vector3(-14 + i * sizeCorrection.x, -3 + j * sizeCorrection.y, 1), Quaternion.identity, montageImage.transform);
+                
+                GameObject go = Instantiate(panels[index], new Vector3(((-cameraMap.width / 2) - (20 - sizeCorrection.x)) * sizeCorrection.x + i * sizeCorrection.x, (-cameraMap.height * sizeCorrection.y / 2) + (sizeCorrection.y / 2) + j * sizeCorrection.y, 1), Quaternion.identity);
+                go.hideFlags = HideFlags.HideInHierarchy;
+                go.transform.parent = montageImage.transform;
             }
         }
     }
