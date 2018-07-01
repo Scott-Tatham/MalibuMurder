@@ -9,6 +9,8 @@ using UnityEngine;
 public class MurderScenario : MonoBehaviour
 {
     public MurderSolveUI solverUI;
+    public SecurityCamera currentlyActiveCamera;
+    public SecurityCamera[] camerasToControl;
 
     [Tooltip("Should we generate the scenario or scan for it?")]
     public bool genScenario = false;

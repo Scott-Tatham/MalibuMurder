@@ -13,6 +13,7 @@ public class MurderSolveUI : MonoBehaviour
     public Dropdown weapon;
     public Image winImage;
     public Text turnsLeft;
+    public GameObject hintObject;
 
 	// Use this for initialization
 	void Start ()
@@ -22,6 +23,18 @@ public class MurderSolveUI : MonoBehaviour
         weapon.ClearOptions();
 	}
 
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (hintObject.activeSelf)
+                hintObject.SetActive(false);
+            else
+                hintObject.SetActive(true);
+        }
+
+    }
     /// <summary>
     /// Add all our actors and weapons for selection.
     /// </summary>
