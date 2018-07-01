@@ -67,7 +67,10 @@ public class MurderSolveUI : MonoBehaviour
     /// <param name="turns">Guesses</param>
     public void SetProposalsLeft(int proposals)
     {
-        turnsLeft.text = "Proposals left: " + proposals;
+        if (turnsLeft == null)
+            return;
+
+            turnsLeft.text = "Proposals left: " + proposals;
     }
 
     /// <summary>

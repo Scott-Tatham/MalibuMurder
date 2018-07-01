@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 /// <summary>
 /// The 'scene' of the crime.
 /// Who died? How? With what?
@@ -11,6 +11,8 @@ public class MurderScenario : MonoBehaviour
     public MurderSolveUI solverUI;
     public SecurityCamera currentlyActiveCamera;
     public SecurityCamera[] camerasToControl;
+    public Dropdown camDrops;
+    public SliderController sControls;
 
     [Tooltip("Should we generate the scenario or scan for it?")]
     public bool genScenario = false;
@@ -19,6 +21,7 @@ public class MurderScenario : MonoBehaviour
     List<Actor> actors;
     List<Weapon> weapons;
     int proposalsLeft;
+    private string lastCam;
 
     public void Start()
     {
@@ -31,9 +34,23 @@ public class MurderScenario : MonoBehaviour
         else
             ScanScenario();
 
+        int dropValue = camDrops.value;
+        //Change the message to say the name of the current Dropdown selection using the value
+        lastCam = camDrops.options[dropValue].text;
+
+        SetCam(lastCam);
         PopulateUI();
     }
 
+    private void Update()
+    {
+        int dropValue = camDrops.value;
+        //Change the message to say the name of the current Dropdown selection using the value
+        string currentCam = camDrops.options[dropValue].text;
+
+        if (currentCam != lastCam)
+            SetCam(currentCam);
+    }
     public void PopulateUI()
     {
         if (actors.Count == 0 || weapons.Count == 0)
@@ -43,6 +60,13 @@ public class MurderScenario : MonoBehaviour
         }
         solverUI.PopulateDropdowns(actors, weapons);
         solverUI.SetProposalsLeft(proposalsLeft);
+    }
+
+    public void SetCam(string cam)
+    {
+        Debug.Log(int.Parse(cam));
+        sControls.cameraToControl = camerasToControl[int.Parse(cam)];
+        lastCam = cam;
     }
 
     public void ScanScenario()
