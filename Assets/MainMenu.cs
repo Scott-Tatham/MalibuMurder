@@ -12,8 +12,8 @@ public class MainMenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.key)
-            Debug.Log("Ehh add this in lateR");
+        //if (Input.key)
+        //    Debug.Log("Ehh add this in lateR");
 
 	}
 }
