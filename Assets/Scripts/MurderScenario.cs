@@ -64,8 +64,8 @@ public class MurderScenario : MonoBehaviour
 
     public void SetCam(string cam)
     {
-        Debug.Log(int.Parse(cam));
-        sControls.cameraToControl = camerasToControl[int.Parse(cam)];
+        Debug.Log("Setting");
+        sControls.SetCamera(camerasToControl[int.Parse(cam) - 1]);
         lastCam = cam;
     }
 
